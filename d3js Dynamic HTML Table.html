@@ -80,7 +80,11 @@
              csv_url2 = false ? "data2.csv" : "https://raw.githubusercontent.com/juanmiRL/d3js-dynamic-HTML-Table-/main/data2.csv"
              
              function getTable(){
+                if(document.getElementById('label-option').value=='choose'){
+                    d3.select("table").text("")
+                }
                 if(document.getElementById('label-option').value=='table1'){
+                    d3.select("table").text("")
                     d3.csv(csv_url,
                     (d,i,c) => {
                             d3.select("table")
@@ -91,6 +95,7 @@
                     })
                  }
                 else if (document.getElementById('label-option').value=='table2'){
+                    d3.select("table").text("")
                     d3.csv(csv_url2,
                     (d,i,c) => {
                             d3.select("table")
